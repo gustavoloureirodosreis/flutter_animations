@@ -1,6 +1,6 @@
 # flutter_animations
 
-A new Flutter project.
+Só seguindo o tutorial do net ninja: https://www.youtube.com/playlist?list=PL4cUxeGkcC9gP1qg8yj-Jokef29VRCLt1
 
 ## Getting Started
 
