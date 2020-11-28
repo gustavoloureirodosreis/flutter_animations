@@ -22,15 +22,21 @@ class _TripListState extends State<TripList> {
   void _addTrips() {
     // get data from db
     List<Trip> _trips = [
-      Trip(title: 'Beach Paradise', price: '350', nights: '3', img: 'beach.png'),
+      Trip(
+          title: 'Beach Paradise', price: '350', nights: '3', img: 'beach.png'),
       Trip(title: 'City Break', price: '400', nights: '5', img: 'city.png'),
       Trip(title: 'Ski Adventure', price: '750', nights: '2', img: 'ski.png'),
       Trip(title: 'Space Blast', price: '600', nights: '4', img: 'space.png'),
     ];
 
+    Future ft = Future(() {});
     _trips.forEach((Trip trip) {
-      _tripTiles.add(_buildTile(trip));
-      _listKey.currentState.insertItem(_tripTiles.length - 1);
+      ft = ft.then((data) {
+        return Future.delayed(const Duration(milliseconds: 100), () {
+          _tripTiles.add(_buildTile(trip));
+          _listKey.currentState.insertItem(_tripTiles.length - 1);
+        });
+      });
     });
   }
 
